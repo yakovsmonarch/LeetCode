@@ -12,3 +12,4 @@
 /home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ConsoleProject.pdb
 /home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ConsoleProject.genruntimeconfig.cache
 /home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ref/ConsoleProject.dll
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ConsoleProject.sourcelink.json
