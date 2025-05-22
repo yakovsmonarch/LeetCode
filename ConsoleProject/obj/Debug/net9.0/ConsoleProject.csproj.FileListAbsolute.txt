@@ -1,0 +1,14 @@
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/bin/Debug/net9.0/ConsoleProject
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/bin/Debug/net9.0/ConsoleProject.deps.json
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/bin/Debug/net9.0/ConsoleProject.runtimeconfig.json
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/bin/Debug/net9.0/ConsoleProject.dll
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/bin/Debug/net9.0/ConsoleProject.pdb
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ConsoleProject.GeneratedMSBuildEditorConfig.editorconfig
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ConsoleProject.AssemblyInfoInputs.cache
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ConsoleProject.AssemblyInfo.cs
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ConsoleProject.csproj.CoreCompileInputs.cache
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ConsoleProject.dll
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/refint/ConsoleProject.dll
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ConsoleProject.pdb
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ConsoleProject.genruntimeconfig.cache
+/home/yakov/Документы/Projects/LeetCode/ConsoleProject/obj/Debug/net9.0/ref/ConsoleProject.dll
