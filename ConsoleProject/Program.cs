@@ -1,7 +1,7 @@
 ﻿using ConsoleProject;
 using ConsoleProject.Data;
 
-Console.WriteLine("Begin");
+Console.WriteLine("Begin_1");
 
 var solution = new Solution();
 var dict = new Dictionary<int, string>();
@@ -15,4 +15,4 @@ for (int i = 1; i <= numLimin; i++)
 var switchGenetate = new SwitchGenetate(dict);
 switchGenetate.GenerateCodeText();
 
-Console.WriteLine("End");
+Console.WriteLine("End_1");
