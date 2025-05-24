@@ -17,6 +17,9 @@ public class Longest_Common_Prefix_14
         {
             {"fl", ["flower", "flow", "flight"]},
             {"", ["dog","racecar","car"]},
+            {"flo", ["flower", "flow", "floight"]},
+            {"flod", ["flodi", "flod"]},
+            
         };
 
         foreach (var item in tasks)
