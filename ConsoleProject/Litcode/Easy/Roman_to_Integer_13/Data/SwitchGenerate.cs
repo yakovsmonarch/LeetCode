@@ -1,12 +1,12 @@
 using System.Text;
 
-namespace ConsoleProject.Data;
+namespace ConsoleProject.Litcode.Easy.Roman_to_integer_13.Data;
 
-public class SwitchGenetate
+public class SwitchGenerate
 {
     private readonly Dictionary<int, string> _nums;
 
-    public SwitchGenetate(Dictionary<int, string> nums)
+    public SwitchGenerate(Dictionary<int, string> nums)
     {
         _nums = nums;
     }

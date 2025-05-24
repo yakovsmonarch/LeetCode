@@ -1,6 +1,4 @@
-﻿using ConsoleProject;
-
-namespace ProblemTest;
+﻿namespace ProblemTest;
 
 public class ProblemTest
 {
@@ -12,7 +10,7 @@ public class ProblemTest
     [Test]
     public void ConvertRomanTest()
     {
-        var solution = new Solution();
+        var solution = new ConsoleProject.Litcode.Easy.Roman_to_integer_13.Solution();
         int numLimin = 3999;
 
         for (int i = 1; i <= numLimin; i++)
