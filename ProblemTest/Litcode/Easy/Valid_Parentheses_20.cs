@@ -3,11 +3,12 @@ namespace ProblemTest.Litcode.Easy;
 public class Valid_Parentheses_20
 {
     private readonly TaskString[] _tasksString = {
-        new TaskString(true, "()"),
-        new TaskString(true, "()[]{}"),
-        new TaskString(false, "(]"),
-        new TaskString(true, "([])"),
-        // new TaskString(false, "([)]"),
+        new (true, "()"),
+        new (true, "()[]{}"),
+        new (false, "(]"),
+        new (true, "([])"),
+        new (false, "([)]"),
+        new (false, "){"),
     };
 
     [SetUp]
@@ -24,7 +25,7 @@ public class Valid_Parentheses_20
         foreach (TaskString taskString in _tasksString)
         {
             bool result = solution.IsValid(taskString.Content);
-            Assert.That(result == taskString.Result, $"Результат метода '{result}' не равен ожидаемому '{taskString.Result}'.");
+            Assert.That(result == taskString.Result, $"Результат метода IsValid [{result}] не равен ожидаемому [{taskString.Result}].");
         }
 
         Assert.Pass();
