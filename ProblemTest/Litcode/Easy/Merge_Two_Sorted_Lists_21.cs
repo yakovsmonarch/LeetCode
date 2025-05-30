@@ -44,6 +44,15 @@ public class Merge_Two_Sorted_Lists_21
         Assert.Pass();
     }
 
+    [Test]
+    public void BigDataTest()
+    {
+        ListNode listNode = GetListNode(new ListNode(), 500000);
+        Assert.That(listNode != null);
+
+        Assert.Pass();
+    }
+
     private bool EqualsArr(ListNode resultNode, ListNode outputNode)
     {
         do
@@ -59,6 +68,13 @@ public class Merge_Two_Sorted_Lists_21
         while (resultNode != null || outputNode != null);
 
         return true;
+    }
+
+    private ListNode GetListNode(ListNode listNode, int count)
+    {
+        if (listNode.val >= count) return listNode;
+
+        return new ListNode(listNode.val, GetListNode(new ListNode(listNode.val + 1), count));
     }
 
     class DataListNode
