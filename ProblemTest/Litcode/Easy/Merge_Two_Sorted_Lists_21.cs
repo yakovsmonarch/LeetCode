@@ -4,23 +4,23 @@ namespace ProblemTest.Litcode.Easy;
 
 public class Merge_Two_Sorted_Lists_21
 {
-
-    /*
-        Input: list1 = [1,2,4], list2 = [1,3,4]
-        Output: [1,1,2,3,4,4]
-    */
-    private readonly Dictionary<ListNode, ListNode[]> _nodes = new Dictionary<ListNode, ListNode[]>
+    private readonly DataListNode[] _dataNodes =
     {
-        {
-            new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4, new ListNode())))))),
-            new ListNode[]
-            {
-                new ListNode(0, new ListNode(1, null)),
-                new ListNode(0, new ListNode(1, null)),
-                new ListNode(0, new ListNode(1, null)),
-            }
-
-        }
+        new DataListNode(
+            new ListNode(1, new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(4, null)))))),
+            new ListNode(1, new ListNode(2, new ListNode(4, null))),
+            new ListNode(1, new ListNode(3, new ListNode(4, null)))
+        ),
+        new DataListNode(
+            null,
+            null,
+            null
+        ),
+        new DataListNode(
+            new ListNode(0, null),
+            null,
+            new ListNode(0, null)
+        ),
     };
 
     [SetUp]
@@ -34,9 +34,11 @@ public class Merge_Two_Sorted_Lists_21
     {
         var solution = new Solution();
 
-        foreach (var node in _nodes)
+        foreach (DataListNode dataNode in _dataNodes)
         {
-            ListNode result = solution.MergeTwoLists(node.Value[0], node.Value[1]);
+            ListNode result = solution.MergeTwoLists(dataNode.ListNode1, dataNode.ListNode2);
+            bool isEqual = EqualsArr(result, dataNode.OutputListNode);
+            Assert.That(isEqual, $"Результат не верен.");
         }
 
         Assert.Pass();
@@ -57,5 +59,19 @@ public class Merge_Two_Sorted_Lists_21
         while (resultNode != null || outputNode != null);
 
         return true;
+    }
+
+    class DataListNode
+    {
+        public readonly ListNode OutputListNode;
+        public readonly ListNode ListNode1;
+        public readonly ListNode ListNode2;
+
+        public DataListNode(ListNode outputListNode, ListNode listNode1, ListNode listNode2)
+        {
+            OutputListNode = outputListNode;
+            ListNode1 = listNode1;
+            ListNode2 = listNode2;
+        }
     }
 }
