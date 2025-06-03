@@ -6,15 +6,18 @@ public class Solution
 {
     public int StrStr(string haystack, string needle)
     {
+        if (haystack.Length < needle.Length) return -1;
+
         int charNeedleId = needle[0];
         for (int i = 0; i < haystack.Length; i++)
         {
             if (haystack[i] != charNeedleId) continue;
+            if (haystack.Length - i + 1 < needle.Length) continue;
 
             bool ok = true;
-            for (int j = 0; j < needle.Length; j++)
+            for (int id = i, j = 0; j < needle.Length; id++, j++)
             {
-                if (haystack[j] != needle[j])
+                if (haystack[id] != needle[j])
                 {
                     ok = false;
                     break;

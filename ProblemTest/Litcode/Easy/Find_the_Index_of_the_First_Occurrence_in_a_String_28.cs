@@ -9,6 +9,10 @@ public class Find_the_Index_of_the_First_Occurrence_in_a_String_28
     {
         new DataSet(0, "sadbutsad", "sad"),
         new DataSet(-1, "leetcode", "leeto"),
+        new DataSet(2, "hello", "ll"),
+        new DataSet(-1, "aa", "aaa"),
+        new DataSet(-1, "mississippi", "issipi"),
+        
     };
 
     [SetUp]
