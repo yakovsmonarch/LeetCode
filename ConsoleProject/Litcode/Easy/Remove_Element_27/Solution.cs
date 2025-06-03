@@ -9,7 +9,7 @@ public class Solution
             return nums[0] != val ? 1 : 0;    
         }
         int result = 0;
-        for (int i = 0, j = nums.Length - 1; i < j; i++)
+        for (int i = 0, j = nums.Length; i < j; i++)
         {
             if (nums[i] != val)
             {
