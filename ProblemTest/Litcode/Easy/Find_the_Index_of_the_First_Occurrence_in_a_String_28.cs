@@ -1,7 +1,16 @@
+using System.ComponentModel;
+using ConsoleProject.Litcode.Easy.Find_the_Index_of_the_First_Occurrence_in_a_String_28;
+
 namespace ProblemTest.Litcode.Easy;
 
 public class Find_the_Index_of_the_First_Occurrence_in_a_String_28
 {
+    private readonly DataSet[] _dataSets =
+    {
+        new DataSet(0, "sadbutsad", "sad"),
+        new DataSet(-1, "leetcode", "leeto"),
+    };
+
     [SetUp]
     public void Setup()
     {
@@ -9,8 +18,29 @@ public class Find_the_Index_of_the_First_Occurrence_in_a_String_28
     }
 
     [Test]
-    public void MergeTwoSortedListsTest()
+    public void StrStrTest()
     {
+        var solution = new Solution();
+
+        foreach (DataSet dataSet in _dataSets)
+        {
+            int result = solution.StrStr(dataSet.Haystack, dataSet.Needle);
+            Assert.That(result == dataSet.Output);
+        }
         Assert.Pass();
+    }
+
+    class DataSet
+    {
+        public readonly int Output;
+        public readonly string Haystack;
+        public readonly string Needle;
+
+        public DataSet(int output, string haystack, string needle)
+        {
+            Output = output;
+            Haystack = haystack;
+            Needle = needle;
+        }
     }
 }

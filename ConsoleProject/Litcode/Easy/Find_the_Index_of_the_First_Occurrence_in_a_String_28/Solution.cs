@@ -4,6 +4,6 @@ public class Solution
 {
     public int StrStr(string haystack, string needle)
     {
-        throw new NotImplementedException();
+        return haystack.IndexOf(needle);
     }
 }
