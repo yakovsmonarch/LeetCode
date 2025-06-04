@@ -12,7 +12,7 @@ public class Solution
         for (int i = 0; i < haystack.Length; i++)
         {
             if (haystack[i] != charNeedleId) continue;
-            if (haystack.Length - i + 1 < needle.Length) continue;
+            if (haystack.Length - i < needle.Length) continue;
 
             bool ok = true;
             for (int id = i, j = 0; j < needle.Length; id++, j++)
