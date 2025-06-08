@@ -12,12 +12,14 @@ public class Solution
     {
         if (end - start <= 1)
         {
-            if (start == end) return nums[start] == target ? start : start + 1;
+            if (target < nums[start]) return start;
+            if (target > nums[end]) return end + 1;
 
-            if (nums[start] != target && nums[end] != target)
-            {
-                return target > nums[end] ? end + 1 : start + 1;
-            }
+            if (target > nums[start]) return start + 1;
+            if (target < nums[end]) return end - 1;
+
+            if (nums[start] == target) return start;
+            if (nums[end] == target) return end;
         }
 
         int average = (end - start) / 2 + start;

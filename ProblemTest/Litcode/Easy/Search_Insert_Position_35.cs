@@ -9,7 +9,8 @@ public class Search_Insert_Position_35
         new DataSet(new int[]{1,3,5,6}, 5, 2),
         new DataSet(new int[]{1,3,5,6}, 2, 1),
         new DataSet(new int[]{1,3,5,6}, 7, 4),
-        
+        new DataSet(new int[]{1,3,5,6}, 0, 0),
+        new DataSet(new int[]{1}, 0, 0),
     };
 
     [SetUp]
@@ -26,7 +27,7 @@ public class Search_Insert_Position_35
         foreach (DataSet item in _dataSets)
         {
             int output = solution.SearchInsert(item.Nums, item.Target);
-            Assert.That(output == item.Output);
+            Assert.That(output == item.Output, $"Результат '{output}', ожидалось '{item.Output}'.");
         }
 
         Assert.Pass();
