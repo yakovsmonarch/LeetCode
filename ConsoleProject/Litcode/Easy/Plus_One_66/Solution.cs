@@ -28,10 +28,12 @@ public class Solution
                 break;
             }
         }
+
         if (digits[0] == 0)
         {
             return new int[] { 1 }.Concat(digits).ToArray();
         }
+        
         return digits;
     }
 }
