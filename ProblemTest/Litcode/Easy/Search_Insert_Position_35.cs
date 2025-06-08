@@ -19,7 +19,7 @@ public class Search_Insert_Position_35
     }
 
     [Test]
-    public void StrStrTest()
+    public void SearchInsertTest()
     {
         var solution = new Solution();
 
@@ -28,7 +28,7 @@ public class Search_Insert_Position_35
             int output = solution.SearchInsert(item.Nums, item.Target);
             Assert.That(output == item.Output);
         }
-        
+
         Assert.Pass();
     }
 
