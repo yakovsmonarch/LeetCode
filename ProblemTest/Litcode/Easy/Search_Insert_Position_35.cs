@@ -1,8 +1,16 @@
+using ConsoleProject.Litcode.Easy.Search_Insert_Position_35;
+
 namespace ProblemTest.Litcode.Easy;
 
 public class Search_Insert_Position_35
 {
-    
+    private readonly DataSet[] _dataSets =
+    {
+        new DataSet(new int[]{1,3,5,6}, 5, 2),
+        new DataSet(new int[]{1,3,5,6}, 2, 1),
+        new DataSet(new int[]{1,3,5,6}, 7, 4),
+        
+    };
 
     [SetUp]
     public void Setup()
@@ -13,20 +21,28 @@ public class Search_Insert_Position_35
     [Test]
     public void StrStrTest()
     {
+        var solution = new Solution();
+
+        foreach (DataSet item in _dataSets)
+        {
+            int output = solution.SearchInsert(item.Nums, item.Target);
+            Assert.That(output == item.Output);
+        }
+        
         Assert.Pass();
     }
 
     class DataSet
     {
         public readonly int[] Nums;
-        public readonly int Num;
-        public readonly int ResultId;
+        public readonly int Target;
+        public readonly int Output;
 
-        public DataSet(int[] nums, int num, int resultId)
+        public DataSet(int[] nums, int target, int output)
         {
             Nums = nums;
-            Num = num;
-            ResultId = resultId;
+            Target = target;
+            Output = output;
         }
     }
 }
