@@ -6,11 +6,17 @@ public class Solution
 {
     public string AddBinary(string a, string b)
     {
-        BigInteger
-            bigA = BigInteger.Parse("0" + a, System.Globalization.NumberStyles.AllowBinarySpecifier),
-            bigB = BigInteger.Parse("0" + b, System.Globalization.NumberStyles.AllowBinarySpecifier);
-        BigInteger res = bigA + bigB;
+        string resultStr = (
+                BigInteger.Parse("0" + a, System.Globalization.NumberStyles.AllowBinarySpecifier) +
+                BigInteger.Parse("0" + b, System.Globalization.NumberStyles.AllowBinarySpecifier)
+            ).
+            ToString("B");
 
-        return res.ToString("B").TrimStart('0');
+        if (resultStr.Length == 1)
+        {
+            return resultStr;
+        }
+
+        return resultStr.TrimStart('0');
     }
 }

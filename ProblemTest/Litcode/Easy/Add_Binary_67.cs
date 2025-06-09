@@ -8,6 +8,8 @@ public class Add_Binary_67
     {
         new DataSet("11", "1", "100"),
         new DataSet("1010", "1011", "10101"),
+        new DataSet("0", "0", "0"),
+        
     };
 
     [SetUp]
