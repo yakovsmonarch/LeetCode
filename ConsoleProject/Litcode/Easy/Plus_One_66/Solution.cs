@@ -31,7 +31,9 @@ public class Solution
 
         if (digits[0] == 0)
         {
-            return new int[] { 1 }.Concat(digits).ToArray();
+            int[] result = new int[digits.Length + 1];
+            result[0] = 1;
+            return result;
         }
         
         return digits;
