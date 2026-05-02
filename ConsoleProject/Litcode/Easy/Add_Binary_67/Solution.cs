@@ -4,7 +4,7 @@ public class Solution
 {
     public string AddBinary(string a, string b)
     {
-        return AddBinaryCastom(a, b);
+        return AddBinaryStandart(a, b);
     }
 
     private string AddBinaryStandart(string a, string b)
