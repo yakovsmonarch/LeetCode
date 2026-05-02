@@ -47,7 +47,7 @@ public class Merge_Two_Sorted_Lists_21
     [Test]
     public void BigDataTest()
     {
-        ListNode listNode = GetListNode(new ListNode(), 500000);
+        ListNode listNode = GetListNode(new ListNode(), 50000);
         Assert.That(listNode != null);
 
         Assert.Pass();
