@@ -9,7 +9,7 @@ public class SqrtX_69
     [SetUp]
     public void Setup()
     {
-        _dataSets = DataSet.GenerateDataSets(10);
+        _dataSets = DataSet.GenerateDataSets(100, 1000);
     }
 
     [Test]
@@ -19,7 +19,9 @@ public class SqrtX_69
 
         foreach (DataSet data in _dataSets)
         {
-            Assert.That(solution.MySqrt(data.Number) == data.SquareNumber);
+            int result = solution.MySqrt(data.Number);
+            Assert.That(result == data.SquareNumber, 
+            $"data.Number = {data.Number}, data.SquareNumber = {data.SquareNumber}, solution.MySqrt(data.Number) = '{result}'.");
         }
 
         Assert.Pass();
@@ -27,14 +29,14 @@ public class SqrtX_69
 
     class DataSet
     {
-        public static List<DataSet> GenerateDataSets(int numberDataSets)
+        public static List<DataSet> GenerateDataSets(int numberDataSets, int maxValue)
         {
             Random random = new Random();
             var list = new List<DataSet>();
 
             for (int i = 0; i < numberDataSets; i++)
             {
-                int number = random.Next(1, int.MaxValue);
+                int number = random.Next(1, maxValue);
                 int squareNumber = (int)Math.Sqrt(number);
                 list.Add(new DataSet(number, squareNumber));
             }
