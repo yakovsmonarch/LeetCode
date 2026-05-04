@@ -9,7 +9,7 @@ public class SqrtX_69
     [SetUp]
     public void Setup()
     {
-        _dataSets = DataSet.GenerateDataSets(100, 1000);
+        _dataSets = DataSet.GenerateDataSets(100, int.MaxValue);
     }
 
     [Test]
