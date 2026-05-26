@@ -13,7 +13,7 @@ public class ClimbStairs_70
     }
 
     [Test]
-    public void AddBinaryTest()
+    public void ClimbStairsTest()
     {
         var solution = new Solution();
 
@@ -34,7 +34,8 @@ public class ClimbStairs_70
             {
                 new DataSet(1, 1),
                 new DataSet(2, 2),
-                new DataSet(3, 3)
+                new DataSet(3, 3),
+                // new DataSet(4, 5)
             };
         }
 
