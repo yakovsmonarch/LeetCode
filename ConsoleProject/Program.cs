@@ -1,3 +1,12 @@
-﻿int a = 0b11, b = 0b1;
-int c = a + b;
-Console.WriteLine(c.ToString("B"));
+﻿using ConsoleProject;
+
+RunTask(NumberTask.ClimbStairs_70).Run();
+
+ITask RunTask(NumberTask numberTask)
+{
+    return numberTask switch
+    {
+        NumberTask.ClimbStairs_70 => new ConsoleProject.Litcode.Easy.ClimbStairs_70.Solution(),
+        _ => throw new Exception()
+    };
+}

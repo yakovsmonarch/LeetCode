@@ -1,6 +1,6 @@
 namespace ConsoleProject.Litcode.Easy.ClimbStairs_70;
 
-public class Solution
+public class Solution : ITask
 {
     /// <summary>
     /// You are climbing a staircase. 
@@ -40,5 +40,38 @@ public class Solution
         return result;
     }
 
-    // Input 4: 1111 211 22
+    public void Run()
+    {
+        const string Range = "1 до 45 включительно";
+        bool isExit = false;
+
+        while (isExit == false)
+        {
+            Console.Write($"Введите число ступенек от {Range} (выход - 'q'): ");
+
+            string? userInput = Console.ReadLine();
+            isExit = userInput?.ToLower() == "q".ToLower();
+
+            if (isExit)
+            {
+                continue;
+            }
+
+            if (int.TryParse(userInput, out int numberSteps) == false)
+            {
+                Console.WriteLine("Ошибка ввода. Введите еще раз.");
+                continue;
+            }
+
+            if (numberSteps < 1 || numberSteps > 45)
+            {
+                Console.WriteLine($"Число '{numberSteps}' не входит в диапазон: {Range}.");
+                continue;
+            }
+
+            Console.WriteLine($"Вариантов взобраться по лестнице: '{new Solution().ClimbStairs(numberSteps)}'");
+        }
+    }
+
+    // Input 4: 22 1111 112 211 121
 }
