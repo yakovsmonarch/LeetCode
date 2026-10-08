@@ -24,17 +24,8 @@ public class Solution : ITask
 
         for (int numberTwos = 1; numberTwos <= maxNumberTwos; numberTwos++)
         {
-            int numberCells = numberTwos + n - (numberTwos * 2);
-            int numberCombinations = (numberCells - numberTwos + 1) * numberCells / 2;
-
-            if (numberCombinations == 0)
-            {
-                result += 1;
-            }
-            else
-            {
-                result += numberCombinations;
-            }
+            int emptySteps = n - (numberTwos - 1) * 2;
+            result += (int)Math.Pow(emptySteps - 1, numberTwos);
         }
 
         return result;
