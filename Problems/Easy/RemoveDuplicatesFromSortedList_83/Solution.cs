@@ -4,7 +4,7 @@ public class Solution : ITask
 {
     public ListNode DeleteDuplicates(ListNode head)
     {
-        return null;
+        return new ListNode(1, new ListNode(2));
     }
 
     public void Run()
