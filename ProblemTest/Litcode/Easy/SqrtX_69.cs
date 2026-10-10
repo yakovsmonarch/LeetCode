@@ -1,4 +1,4 @@
-using ConsoleProject.Litcode.Easy.SqrtX_69;
+using Problems.Easy.SqrtX_69;
 
 namespace ProblemTest.Litcode.Easy;
 

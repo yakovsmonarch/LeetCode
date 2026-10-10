@@ -1,4 +1,4 @@
-using ConsoleProject.Litcode.Easy.Merge_Two_Sorted_Lists_21;
+using Problems.Easy.Merge_Two_Sorted_Lists_21;
 
 namespace ProblemTest.Litcode.Easy;
 

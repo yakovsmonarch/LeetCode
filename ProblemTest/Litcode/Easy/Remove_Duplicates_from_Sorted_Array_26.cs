@@ -1,4 +1,4 @@
-using ConsoleProject.Litcode.Easy.Remove_Duplicates_from_Sorted_Array_26;
+using Problems.Easy.Remove_Duplicates_from_Sorted_Array_26;
 
 namespace ProblemTest.Litcode.Easy;
 

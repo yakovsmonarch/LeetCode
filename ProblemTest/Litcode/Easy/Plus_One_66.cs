@@ -1,4 +1,4 @@
-using ConsoleProject.Litcode.Easy.Plus_One_66;
+using Problems.Easy.Plus_One_66;
 
 namespace ProblemTest.Litcode.Easy;
 

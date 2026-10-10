@@ -1,5 +1,4 @@
-using System.ComponentModel;
-using ConsoleProject.Litcode.Easy.Find_the_Index_of_the_First_Occurrence_in_a_String_28;
+using Problems.Easy.Find_the_Index_of_the_First_Occurrence_in_a_String_28;
 
 namespace ProblemTest.Litcode.Easy;
 

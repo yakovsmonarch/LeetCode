@@ -1,3 +1,5 @@
+using Problems.Easy.Longest_Common_Prefix_14;
+
 namespace ProblemTest.Litcode.Easy;
 
 public class Longest_Common_Prefix_14
@@ -11,7 +13,7 @@ public class Longest_Common_Prefix_14
     [Test]
     public void LongestCommonPrefix()
     {
-        var solution = new ConsoleProject.Litcode.Easy.Longest_Common_Prefix_14.Solution();
+        var solution = new Solution();
 
         var tasks = new Dictionary<string, string[]>()
         {

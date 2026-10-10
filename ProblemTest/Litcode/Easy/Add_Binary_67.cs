@@ -1,4 +1,4 @@
-using ConsoleProject.Litcode.Easy.Add_Binary_67;
+using Problems.Easy.Add_Binary_67;
 
 namespace ProblemTest.Litcode.Easy;
 

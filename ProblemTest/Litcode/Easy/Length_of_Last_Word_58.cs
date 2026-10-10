@@ -1,4 +1,4 @@
-using ConsoleProject.Litcode.Easy.Length_of_Last_Word_58;
+using Problems.Easy.Length_of_Last_Word_58;
 
 namespace ProblemTest.Litcode.Easy;
 

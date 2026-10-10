@@ -1,3 +1,5 @@
+using Problems.Easy.Roman_to_integer_13;
+
 namespace ProblemTest.Litcode.Easy;
 
 public class Roman_to_integer_13
@@ -10,7 +12,7 @@ public class Roman_to_integer_13
     [Test]
     public void ConvertRomanTest()
     {
-        var solution = new ConsoleProject.Litcode.Easy.Roman_to_integer_13.Solution();
+        var solution = new Solution();
         int numLimin = 3999;
 
         for (int i = 1; i <= numLimin; i++)

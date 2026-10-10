@@ -1,3 +1,5 @@
+using Problems.Easy.Valid_Parentheses_20;
+
 namespace ProblemTest.Litcode.Easy;
 
 public class Valid_Parentheses_20
@@ -20,7 +22,7 @@ public class Valid_Parentheses_20
     [Test]
     public void ValidParenthesesTest()
     {
-        var solution = new ConsoleProject.Litcode.Easy.Valid_Parentheses_20.Solution();
+        var solution = new Solution();
 
         foreach (TaskString taskString in _tasksString)
         {

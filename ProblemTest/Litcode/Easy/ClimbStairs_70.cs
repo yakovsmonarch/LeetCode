@@ -1,4 +1,4 @@
-using ConsoleProject.Litcode.Easy.ClimbStairs_70;
+using Problems.Easy.ClimbStairs_70;
 
 namespace ProblemTest.Litcode.Easy;
 

@@ -1,4 +1,4 @@
-using ConsoleProject.Litcode.Easy.Search_Insert_Position_35;
+using Problems.Easy.Search_Insert_Position_35;
 
 namespace ProblemTest.Litcode.Easy;
 

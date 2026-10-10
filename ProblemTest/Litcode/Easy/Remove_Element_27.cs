@@ -1,4 +1,4 @@
-using ConsoleProject.Litcode.Easy.Remove_Element_27;
+using Problems.Easy.Remove_Element_27;
 
 namespace ProblemTest.Litcode.Easy;
 
