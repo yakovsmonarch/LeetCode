@@ -14,21 +14,22 @@ public class Solution : ITask
     /// <exception cref="NotImplementedException"></exception>
     public int ClimbStairs(int n)
     {
-        if (n == 1)
+        if (n == 1 || n == 2)
         {
             return n;
         }
 
-        int maxNumberTwos = n / 2;
-        int result = 1;
+        int variants1 = 1;
+        int variants2 = 2;
 
-        for (int numberTwos = 1; numberTwos <= maxNumberTwos; numberTwos++)
+        for (int i = 3; i <= n; i++)
         {
-            int emptySteps = n - (numberTwos - 1) * 2;
-            result += (int)Math.Pow(emptySteps - 1, numberTwos);
+            int newVariant = variants2 + variants1;
+            variants1 = variants2;
+            variants2 = newVariant;
         }
 
-        return result;
+        return variants2;
     }
 
     public void Run()
@@ -60,7 +61,7 @@ public class Solution : ITask
                 continue;
             }
 
-            Console.WriteLine($"Вариантов взобраться по лестнице: '{new Solution().ClimbStairs(numberSteps)}'");
+            Console.WriteLine($"Вариантов взобраться по лестнице: '{ClimbStairs(numberSteps)}'");
         }
     }
 

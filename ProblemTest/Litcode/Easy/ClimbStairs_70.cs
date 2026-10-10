@@ -35,7 +35,8 @@ public class ClimbStairs_70
                 new DataSet(1, 1),
                 new DataSet(2, 2),
                 new DataSet(3, 3),
-                new DataSet(4, 5)
+                new DataSet(4, 5),
+                new DataSet(5, 8)
             };
         }
 
@@ -49,3 +50,4 @@ public class ClimbStairs_70
         }
     }
 }
+// MRX3F-47B9T-2487J-KWKMF-RPWBY
