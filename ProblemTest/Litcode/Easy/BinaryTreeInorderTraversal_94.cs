@@ -1,3 +1,4 @@
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 using Problems.Easy.BinaryTreeInorderTraversal_94;
 
 namespace ProblemTest.Litcode.Easy;
@@ -17,10 +18,11 @@ public class BinaryTreeInorderTraversal_94
     [Test]
     public void BinaryTreeInorderTraversalTest()
     {
-        foreach(var dataSet in _dataSets)
+        foreach (var dataSet in _dataSets)
         {
             IList<int> result = _solution.InorderTraversal(dataSet.Input);
-            Assert.That(false);
+            bool equal = result.SequenceEqual(dataSet.Output);
+            Assert.That(equal, $" result = {string.Join("", result)}; output = {string.Join("", dataSet.Output)}");
         }
 
         Assert.Pass();
@@ -41,16 +43,36 @@ public class BinaryTreeInorderTraversal_94
         {
             return new DataSet[]
             {
-                new DataSet(null, null),
-                new DataSet(null, null),
-                new DataSet(null, null),
+                new DataSet
+                (
+                    new TreeNode(1, null, new TreeNode(2, new TreeNode(3))),
+                    new List<int>{1, 3, 2}
+                ),
+
+                new DataSet
+                (
+                    new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5, new TreeNode(6), new TreeNode(7))), new TreeNode(3, null, new TreeNode(8, new TreeNode(9)))),
+                    new List<int>{4,2,6,5,7,1,3,9,8}
+                ),
+
+                new DataSet
+                (
+                    new TreeNode(),
+                    new List<int>{}
+                ),
+
+                new DataSet
+                (
+                    new TreeNode(1),
+                    new List<int>{1}
+                ),
             };
         }
 
-        public TreeNode Input;
-        public TreeNode Output;
+        public readonly TreeNode Input;
+        public readonly IList<int> Output;
 
-        public DataSet(TreeNode input, TreeNode output)
+        public DataSet(TreeNode input, IList<int> output)
         {
             Input = input;
             Output = output;
