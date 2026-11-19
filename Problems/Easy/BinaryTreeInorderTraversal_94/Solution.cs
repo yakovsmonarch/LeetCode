@@ -9,6 +9,11 @@ public class Solution : ITask
     {
         var treeNodes = new List<int>();
 
+        if(root == null)
+        {
+            return treeNodes;
+        }
+
         if (root.left != null)
         {
             treeNodes.AddRange(InorderTraversal(root.left));
