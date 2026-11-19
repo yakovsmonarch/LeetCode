@@ -7,24 +7,27 @@ public class Solution : ITask
 {
     public IList<int> InorderTraversal(TreeNode root)
     {
-        var treeNodes = new List<int>();
+        var inorderTraversal = new List<int>();
 
         if(root == null)
         {
-            return treeNodes;
+            return inorderTraversal;
         }
 
         if (root.left != null)
         {
-            treeNodes.AddRange(InorderTraversal(root.left));
-        }
-        if (root.right != null)
-        {
-            treeNodes.AddRange(InorderTraversal(root.right));
+            inorderTraversal.AddRange(InorderTraversal(root.left));
         }
 
-        treeNodes.Add(root.val);
-        return treeNodes;
+        inorderTraversal.Add(root.val);
+
+        if (root.right != null)
+        {
+            inorderTraversal.AddRange(InorderTraversal(root.right));
+            return inorderTraversal;
+        }
+
+        return inorderTraversal;
     }
 
     public void Run()

@@ -22,7 +22,7 @@ public class BinaryTreeInorderTraversal_94
         {
             IList<int> result = _solution.InorderTraversal(dataSet.Input);
             bool equal = result.SequenceEqual(dataSet.Output);
-            Assert.That(equal, $" result = {string.Join("", result)}; output = {string.Join("", dataSet.Output)}");
+            Assert.That(equal, $" result = {string.Join(" ", result)}; output = {string.Join(" ", dataSet.Output)}");
         }
 
         Assert.Pass();
@@ -57,7 +57,7 @@ public class BinaryTreeInorderTraversal_94
 
                 new DataSet
                 (
-                    new TreeNode(),
+                    null,
                     new List<int>{}
                 ),
 
