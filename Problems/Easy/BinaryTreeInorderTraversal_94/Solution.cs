@@ -7,13 +7,17 @@ public class Solution : ITask
 {
     public IList<int> InorderTraversal(TreeNode root)
     {
-        if (root.left == null && root.right == null)
+        var treeNodes = new List<int>();
+
+        if (root.left != null)
         {
-            return new List<int> { root.val };
+            treeNodes.AddRange(InorderTraversal(root.left));
+        }
+        if (root.right != null)
+        {
+            treeNodes.AddRange(InorderTraversal(root.right));
         }
 
-        IList<int> treeNodes;
-        treeNodes = InorderTraversal(root.left);
         treeNodes.Add(root.val);
         return treeNodes;
     }
@@ -22,6 +26,6 @@ public class Solution : ITask
     {
         TreeNode root = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5, new TreeNode(6), new TreeNode(7))),
             new TreeNode(3, null, new TreeNode(8, new TreeNode(9))));
-        Console.WriteLine($"Левая ветка дерева: {string.Join(" ", InorderTraversal(root))}");
+        Console.WriteLine($"Значения всех услов: {string.Join(" ", InorderTraversal(root))}");
     }
 }
