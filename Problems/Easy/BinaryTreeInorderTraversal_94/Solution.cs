@@ -1,3 +1,6 @@
+using System.IO.Pipelines;
+using System.Linq;
+
 namespace Problems.Easy.BinaryTreeInorderTraversal_94;
 
 /// <summary>
@@ -9,7 +12,7 @@ public class Solution : ITask
     {
         var inorderTraversal = new List<int>();
 
-        if(root == null)
+        if (root == null)
         {
             return inorderTraversal;
         }
@@ -32,8 +35,47 @@ public class Solution : ITask
 
     public void Run()
     {
-        TreeNode root = new TreeNode(1, new TreeNode(2, new TreeNode(4), new TreeNode(5, new TreeNode(6), new TreeNode(7))),
-            new TreeNode(3, null, new TreeNode(8, new TreeNode(9))));
-        Console.WriteLine($"Значения всех услов: {string.Join(" ", InorderTraversal(root))}");
+        while (true)
+        {
+            Console.Write("Введите значения узлов через запятую (пример: 1,null,2,3): ");
+            string? input = Console.ReadLine();
+
+            if (string.IsNullOrEmpty(input))
+            {
+                continue;
+            }
+
+            TreeNode root = StringToTreeNode(input);
+            Console.WriteLine($"Значения всех услов: {string.Join(" ", InorderTraversal(root))}");
+        }
+    }
+
+    private TreeNode StringToTreeNode(string input)
+    {
+        var treeArr = input.Split(',').Select(s => int.TryParse(s, out int result) ? result : (int?)null);
+        TreeNode root = null;
+        TreeNode courrentTree = null;
+        int counter = 0;
+
+        foreach (int? item in treeArr)
+        {
+            if (counter == 0)
+            {
+                root = new TreeNode(item.GetValueOrDefault(0));
+                courrentTree = root;
+            }
+            else if (counter == 1)
+            {
+                root?.left = new TreeNode(item.GetValueOrDefault(0));
+            }
+            else if (counter == 2)
+            {
+                root?.right = new TreeNode(item.GetValueOrDefault(0));
+            }
+
+            counter = ++counter > 2 ? 0 : counter;
+        }
+
+        return root;
     }
 }
