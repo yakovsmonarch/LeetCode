@@ -38,42 +38,48 @@ public class Solution : ITask
         while (true)
         {
             Console.Write("Введите значения узлов через запятую (пример: 1,null,2,3): ");
-            string? input = Console.ReadLine();
-
-            if (string.IsNullOrEmpty(input))
-            {
-                continue;
-            }
-
-            TreeNode root = StringToTreeNode(input);
+            List<int?> treeArr = Console.ReadLine().Split(',').Select(s => int.TryParse(s, out int result) ? result : (int?)null).ToList();
+            TreeNode root = StringToTreeNode(treeArr);
             Console.WriteLine($"Значения всех услов: {string.Join(" ", InorderTraversal(root))}");
         }
     }
 
-    private TreeNode StringToTreeNode(string input)
+    private TreeNode StringToTreeNode(List<int?> treeArr)
     {
-        var treeArr = input.Split(',').Select(s => int.TryParse(s, out int result) ? result : (int?)null);
-        TreeNode root = null;
-        TreeNode courrentTree = null;
-        int counter = 0;
-
-        foreach (int? item in treeArr)
+        if (treeArr == null || treeArr.Count == 0 || treeArr[0] == null)
         {
-            if (counter == 0)
+            return null;
+        }
+
+        TreeNode root = new TreeNode(treeArr[0].Value);
+        var queue = new Queue<TreeNode>();
+        queue.Enqueue(root);
+        int i = 1;
+        var isOk = () => i < treeArr.Count && queue.Count > 0;
+
+        while (isOk())
+        {
+            TreeNode node = queue.Dequeue();
+
+            if (i < treeArr.Count)
             {
-                root = new TreeNode(item.GetValueOrDefault(0));
-                courrentTree = root;
-            }
-            else if (counter == 1)
-            {
-                root?.left = new TreeNode(item.GetValueOrDefault(0));
-            }
-            else if (counter == 2)
-            {
-                root?.right = new TreeNode(item.GetValueOrDefault(0));
+                if(treeArr[i] != null)
+                {
+                    node.left = new TreeNode(treeArr[i].Value);
+                    queue.Enqueue(node.left);
+                }
+                i++;
             }
 
-            counter = ++counter > 2 ? 0 : counter;
+            if (i < treeArr.Count)
+            {
+                if(treeArr[i] != null)
+                {
+                    node.right = new TreeNode(treeArr[i].Value);
+                    queue.Enqueue(node.right);
+                }
+                i++;
+            }
         }
 
         return root;
