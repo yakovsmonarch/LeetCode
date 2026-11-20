@@ -10,16 +10,16 @@ public class SameTree_100
     }
 
     [Test]
-    public void ConvertRomanTest()
+    public void SameTreeTest()
     {
         var solution = new Solution();
 
-        foreach(var dataSet in DataSet.GenetateData())
+        foreach (var dataSet in DataSet.GenetateData())
         {
             bool result = solution.IsSameTree(dataSet.TreeNode1, dataSet.TreeNode2);
-            Assert.That(result && dataSet.Output, $"result: {result}, output: {dataSet.Output}");
+            Assert.That(result == dataSet.Output, $"result: {result}, output: {dataSet.Output}");
         }
-        
+
         Assert.Pass();
     }
 
@@ -32,14 +32,15 @@ public class SameTree_100
                 new DataSet(new TreeNode(1, new TreeNode(2), new TreeNode(3)),
                     new TreeNode(1, new TreeNode(2), new TreeNode(3)),
                     true),
-
-                new DataSet(new TreeNode(1, new TreeNode(2)), 
+                    
+                new DataSet(new TreeNode(1, new TreeNode(2)),
                     new TreeNode(1, null, new TreeNode(2)),
                     false),
 
                 new DataSet(new TreeNode(1, new TreeNode(2), new TreeNode(1)),
                     new TreeNode(1, new TreeNode(1), new TreeNode(2)),
                     false)
+                    
             };
         }
 
