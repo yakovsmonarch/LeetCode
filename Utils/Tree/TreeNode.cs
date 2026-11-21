@@ -1,4 +1,4 @@
-namespace Problems.Easy.BinaryTreeInorderTraversal_94;
+namespace Utils.Tree;
 
 public class TreeNode
 {
